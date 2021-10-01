@@ -9,6 +9,11 @@ function gettranslationurl(text){
     return url + "?" +  "text=" +text;
 }
 
+function errorHandler(error){
+    console.log("error occured",error);
+    alert("some error has occured try again after sometime");
+}
+
 
 function clicked(){
     // outputdiv.innerText = "nahtnam ruog" + textinput.value;
@@ -17,9 +22,8 @@ function clicked(){
          .then(response => response.json())
          .then(json => {
              outputdiv.innerText= json.contents.translated // output nav 
-              });
-
-
-};
+              })
+              .catch(errorHandler);
+}
 clicktxt.addEventListener("click",clicked);
 
