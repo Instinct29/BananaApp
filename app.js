@@ -16,7 +16,7 @@ function clicked(){
      fetch(gettranslationurl(inputtext))
          .then(response => response.json())
          .then(json => {
-             outputdiv.innerText= json.contents.translated
+             outputdiv.innerText= json.contents.translated // output nav 
               });
 
 
